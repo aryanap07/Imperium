@@ -1,0 +1,27 @@
+[project]
+name = "Imperial"
+version = "0.1.0"
+description = "Control through conversation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "pyyaml",
+    "jinja2",
+    "anthropic",
+    "pillow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+
+[project.scripts]
+imperial = "imperial.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
